@@ -18,15 +18,15 @@ import java.lang.reflect.Method;
     @Test
     void voidSinParametros() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
 
-        Method privateMethod = PrivateMetodos.class.getDeclaredMethod("voidSinParametros");
+        Method privateMethod = PrivateMetodos.class.getDeclaredMethod("privateVoidSinParametros");
         privateMethod.setAccessible(true);
         privateMethod.invoke(privateMetodos);
 
-        Assertions.assertEquals("funciono", privateMetodos.getParaAsignar());
+        Assertions.assertEquals("asigandoEnMetodoPrivateVoid", privateMetodos.getParaAsignar());
     }
 
     @Test
     void getParaAsignar(){
-        Assertions.assertEquals("inicial", privateMetodos.getParaAsignar());
+        Assertions.assertEquals("valorInicial", privateMetodos.getParaAsignar());
     }
 }

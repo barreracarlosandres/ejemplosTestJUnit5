@@ -2,12 +2,11 @@ package com.test.ejemplo_test.ejemplos;
 
 public class PrivateMetodos {
 
-    private String paraAsignar = "inicial";
+    private String paraAsignar = "valorInicial";
 
-    private void voidSinParametros(){
-        paraAsignar = "funciono";
+    private void privateVoidSinParametros(){
+        paraAsignar = "asigandoEnMetodoPrivateVoid";
     }
-
 
     public String getParaAsignar(){
         return  this.paraAsignar;
