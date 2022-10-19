@@ -1,6 +1,6 @@
-package com.test.ejemplo_test.ejemplos;
+package com.test.ejemplo_test.metodos_privados;
 
-public class PrivateMetodos {
+public class VoidSinParametros {
 
     private String paraAsignar = "valorInicial";
 
@@ -8,7 +8,7 @@ public class PrivateMetodos {
         paraAsignar = "asigandoEnMetodoPrivateVoid";
     }
 
-    public String getParaAsignar(){
+    public String recuperarParametroAsignado(){
         return  this.paraAsignar;
     }
 }

@@ -1,5 +1,4 @@
-package com.test.ejemplo_test.ejemplos;
-
+package com.test.ejemplo_test.metodos_privados;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -10,23 +9,23 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 @SpringBootTest
- class PrivateMetodosTest {
+class VoidConParametroTest {
 
     @InjectMocks
-    PrivateMetodos privateMetodos;
+    VoidConParametro voidConParametro;
 
     @Test
     void voidSinParametros() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
 
-        Method privateMethod = PrivateMetodos.class.getDeclaredMethod("privateVoidSinParametros");
+        Method privateMethod = VoidConParametro.class.getDeclaredMethod("privateVoidMetodoConParametro", String.class);
         privateMethod.setAccessible(true);
-        privateMethod.invoke(privateMetodos);
+        privateMethod.invoke(voidConParametro, "nuevoValor");
 
-        Assertions.assertEquals("asigandoEnMetodoPrivateVoid", privateMetodos.getParaAsignar());
+        Assertions.assertEquals("nuevoValor", voidConParametro.recuperarParametroAsignado());
     }
 
     @Test
     void getParaAsignar(){
-        Assertions.assertEquals("valorInicial", privateMetodos.getParaAsignar());
+        Assertions.assertEquals("valorInicial", voidConParametro.recuperarParametroAsignado());
     }
 }

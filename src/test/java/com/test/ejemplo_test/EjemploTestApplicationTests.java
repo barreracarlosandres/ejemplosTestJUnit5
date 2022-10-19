@@ -12,4 +12,10 @@ class EjemploTestApplicationTests {
 		Assertions.assertTrue(true);
 	}
 
+	@Test
+	public void applicationContextTest() {
+		Application.main(new String[] {});
+		Assertions.assertTrue(true);
+	}
+
 }
