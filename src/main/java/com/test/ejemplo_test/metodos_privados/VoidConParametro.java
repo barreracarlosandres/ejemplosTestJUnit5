@@ -4,6 +4,7 @@ public class VoidConParametro {
 
     private String paraAsignar = "valorInicial";
 
+    @SuppressWarnings("java:S1144")
     private void privateVoidMetodoConParametro(String nuevoValor){
         this.paraAsignar = nuevoValor;
     }

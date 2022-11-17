@@ -4,17 +4,18 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
-import org.junitpioneer.jupiter.CartesianValueSource;
 
 class OperacionesMatematicasTest {
 
+    private Integer respuestaOperacion = null;
+    private Integer respuestaEsperada = null;
+
     @ParameterizedTest
     @ValueSource(ints = { -1, 0, 1, 2, 3 })
-    void duplicar(int x) {
+    void duplicar(Integer x) {
 
         //arrange
-        int respuestaOperacion = 0;
-        int respuestaEsperada = x + x;
+        respuestaEsperada = x + x;
         //act
         respuestaOperacion = OperacionesMatematicas.duplicar(x);
         //assert
@@ -24,10 +25,9 @@ class OperacionesMatematicasTest {
 
     @ParameterizedTest
     @CsvSource({"1,1", "1,2", "1,3"})
-    void sumar(int x, int y){
+    void sumar(Integer x, Integer y){
         //arrange
-        int respuestaEsperada = x + y;
-        int respuestaOperacion = 0;
+        respuestaEsperada = x + y;
         //act
         respuestaOperacion = OperacionesMatematicas.sumar(x,y);
         //assert

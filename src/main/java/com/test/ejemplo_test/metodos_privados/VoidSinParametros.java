@@ -4,6 +4,7 @@ public class VoidSinParametros {
 
     private String paraAsignar = "valorInicial";
 
+    @SuppressWarnings("java:S1144")
     private void privateVoidSinParametros(){
         paraAsignar = "asigandoEnMetodoPrivateVoid";
     }
